@@ -1,8 +1,18 @@
+function Start()
+
+
+
+
 var questions = [
   {
-    question: "What is your name",
-    choices: ["a", "alksjfd", "as;dklj", "a;lskdj"],
-    correctAnswer: "alksjfd",
+    question: "What does HTML stand for?",
+    choices: [
+      "Hyper Trainer Marking Language",
+      "Hyper Text Marketing Language",
+      "Hyper Text Marketing Language",
+      "Hyper Text Marketing Language",
+    ],
+    correctAnswer: "Hyper Text Markup Language",
   },
   {
     question: "What is your names",
@@ -20,7 +30,19 @@ var questions = [
     correctAnswer: "alksjfd",
   },
 ];
+
 //create counter to know which question you are on
+function Countdown() {
+  var timerInterval = setInterval(function () {
+    secondsLeft--;
+    timeEl.textContent = secondsLeft + " ";
+
+    if (secondsLeft === 0) {
+      clearInterval(timerInterval);
+      sendMessage();
+    }
+  }, 1000);
+}
 
 // var student = {
 //     firstName: "Ari",
