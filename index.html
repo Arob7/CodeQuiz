@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
     <link rel="stylesheet" type="text/css" href="./assets/styles.css" />
   </head>
 
@@ -11,14 +18,61 @@
     <button type="button" onclick="document.getElementById('start').innerHTML">
       START QUIZ!
     </button>
-    <div id="questions">
+    <!-- <div id="questions">
       <div class="question"></div>
       <ul>
-        <li id="a"></li>
-        <li id="b"></li>
-        <li id="c"></li>
-        <li id="d"></li>
-      </ul>
+        <li id="a">a</li>
+        <li id="b">b</li>
+        <li id="c">1</li>
+        <li id="d">2</li>
+      </ul> -->
+
+    <div class="card border-dark mb-3" style="max-width: 18rem;">
+      <div class="card-header">Question #1</div>
+      <div class="card-body text-dark">
+        <h5 id="questions">
+          Which event occurs when the user clicks on an HTML element?
+        </h5>
+      </div>
+      <!-- FIRST RADIO -->
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="exampleRadios"
+          id="exampleRadios1"
+          value="option1"
+        />
+        <label class="form-check-label" for="exampleRadios1">
+          onchange
+        </label>
+      </div>
+      <!-- SECOND RADIO -->
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="exampleRadios"
+          id="exampleRadios2"
+          value="option2"
+        />
+        <label class="form-check-label" for="exampleRadios2">
+          onmouseclick
+        </label>
+      </div>
+      <!-- THIRD RADIO -->
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="exampleRadios"
+          id="exampleRadios1"
+          value="option1"
+        />
+        <label class="form-check-label" for="exampleRadios1">
+          onclick
+        </label>
+      </div>
     </div>
 
     <script src="./assets/script.js"></script>
