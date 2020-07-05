@@ -1,0 +1,17 @@
+#container {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+#question-container {
+  background-color: aquamarine;
+}
+
+#answer-buttons {
+  background-color: cadetblue;
+  display: grid;
+  margin: 20px;
+}
+
+.hide {
+  display: none;
+}

@@ -1,59 +1,103 @@
-// function start() {
+// let startQuiz = document.getElementById("startButton");
 
-// SHOULD START BUTTON BE ITS OWN FUNCTION APART FROM QUESTIONS OR TOGETHER??
+document.getElementById("startButton").addEventListener("click", start);
 
-// THIS IS A VARIABLE THAT HAS ARRAYS WITHIN AN ARRAY AND MULTIPLE OBJECTS
-var questions = [
+//   document.getElementById("text").innerText
+// }
+
+// let answerTwo = "<script>";
+// let answerThree = "aFunction()";
+// let answerFour = "=";
+// let answerFive = "if (i==3)";
+
+function start() {
+  // document.getElementById("questionOne").innerHTML;
+  console.log(answer.value);
+}
+//   start.style.display = "none";
+// }
+
+let questionOne = [
   {
     question: "Which event occurs when the user clicks on an HTML element?",
     choices: ["onchange", "onmouseclick", "onclick", "onmouseover"],
-    correctAnswer: "onclick",
-  },
-  {
-    question: "Inside which HTML tag do we put the JavaScript?",
-    choices: ["<js>", "<javascript>", "scripting", "<script>"],
-    correctAnswer: "<script>",
-  },
-  {
-    question: "How do you create a function in JavaScript?",
-    choices: [
-      "call aFunction()",
-      "aFunction()",
-      "call function aFunction",
-      "var aFunction()",
-    ],
-    correctAnswer: "aFunction()",
-  },
-  {
-    question: "Which operator is used to assign a value to a variable?",
-    choices: ["*", "=", "-", ":"],
-    correctAnswer: "=",
-  },
-  {
-    question: "How to write an IF statement in JavaScript?",
-    choices: ["if i == 3", "if i = 3", "if (i==3)", "if (i=3) then"],
-    correctAnswer: "if (i==3)",
   },
 ];
+
+// THIS VALIDATES RADIO BUTTONS AND WORKS!!
+function check() {
+  if (document.getElementById("answerOne").checked) alert("Correct!");
+  else alert("Wrong answer!");
+}
+
+// let questionTwo = [
+//   {
+//     question: "Inside which HTML tag do we put the JavaScript?",
+//     choices: ["<js>", "<javascript>", "scripting", "<script>"],
+//     correctAnswer: "<script>",
+//   },
+// ];
+
+// let questionThree = [
+//   {
+//     question: "How do you create a function in JavaScript?",
+//     choices: [
+//       "call aFunction()",
+//       "aFunction()",
+//       "call function aFunction",
+//       "var aFunction()",
+//     ],
+//     correctAnswer: "aFunction()",
+//   },
+// ];
+
+// let questionFour = [
+//   {
+//     question: "Which operator is used to assign a value to a variable?",
+//     choices: ["*", "=", "-", ":"],
+//     correctAnswer: "=",
+//   },
+// ];
+
+// let questionFive = [
+//   {
+//     question: "How to write an IF statement in JavaScript?",
+//     choices: ["if i == 3", "if i = 3", "if (i==3)", "if (i=3) then"],
+//     correctAnswer: "if (i==3)",
+//   },
+// ];
+
 // }
 
 // PRACTICE AREA
-// console.log(questions[0].choices[2]);
-
-// console.log(questions[4].correctAnswer);
 
 // THIS LOOPS THROUGH THE QUESTIONS
-for (let i = 0; i < questions.length; i++) {
-  console.log(questions[i].question);
-}
+// for (let i = 0; i < questions.length; i++) {
+//   console.log(questions[i].question);
+// }
 
-for (let x of questions) {
-  console.log(x);
-}
+// for (let x of questions) {
+//   console.log(x.question);
+// }
+
+// questions.forEach(function (a) {
+//   console.log(a.question);
+// });
+// questions.forEach(function (b) {
+//   console.log(b.choices);
+// });
+
+// questions.forEach(function (c) {
+//   console.log(c.correctAnswer);
+// });
+
+// for (let y of choices) {
+//   console.log(y)
+// }
 
 // WILL I HAVE TO MAKE A LOOP FOR CHOICES AND CORRECTANSWER ALSO?
 
-//create counter to know which question you are on
+//create counter to know which question you are on --THIS IS TIMER
 // function Countdown() {
 //   var timerInterval = setInterval(function () {
 //     secondsLeft--;
@@ -77,3 +121,25 @@ for (let x of questions) {
 // console.log(student.firstName)
 // console.log(questions[3].question)
 // console.log(questions[3].choices[2])
+
+// THIS IS FOR SCORE COUNTER
+// var count = 0;
+// var incrementEl = document.querySelector("#increment");
+// var decrementEl = document.querySelector("#decrement");
+// var countEl = document.querySelector("#count");
+
+// function setCounterText() {
+//   countEl.textContent = count;
+// }
+
+// incrementEl.addEventListener("click", function () {
+//   count++;
+//   setCounterText();
+// });
+
+// decrementEl.addEventListener("click", function () {
+//   if (count > 0) {
+//     count--;
+//     setCounterText();
+//   }
+// });

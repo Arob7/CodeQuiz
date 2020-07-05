@@ -3,76 +3,117 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>JavaScript Quiz</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
     />
-
     <link rel="stylesheet" type="text/css" href="./assets/styles.css" />
   </head>
 
   <body>
-    <button type="button" onclick="document.getElementById('start').innerHTML">
+    <!-- START BUTTON -->
+    <button
+      type="button"
+      class="btn btn-primary"
+      id="startButton"
+      onclick="start()"
+    >
       START QUIZ!
     </button>
-    <!-- <div id="questions">
-      <div class="question"></div>
-      <ul>
-        <li id="a">a</li>
-        <li id="b">b</li>
-        <li id="c">1</li>
-        <li id="d">2</li>
-      </ul> -->
 
-    <div class="card border-dark mb-3" style="max-width: 18rem;">
-      <div class="card-header">Question #1</div>
-      <div class="card-body text-dark">
-        <h5 id="questions">
-          Which event occurs when the user clicks on an HTML element?
-        </h5>
+    <!-- THIS AREA IS FOR SCORE COUNTER -->
+    <!-- <div>
+      <h4>Current count: <span id="count">0</span></h4>
+      <div class="container">
+        <button id="decrement">Decrement</button>
+        <button id="increment">Increment</button>
       </div>
-      <!-- FIRST RADIO -->
-      <div class="form-check">
-        <input
-          class="form-check-input"
-          type="radio"
-          name="exampleRadios"
-          id="exampleRadios1"
-          value="option1"
-        />
-        <label class="form-check-label" for="exampleRadios1">
-          onchange
-        </label>
+  
+    </div> -->
+
+    <!-- CARD -->
+    <div id="container" class="hide">
+      <div class="card border-dark mb-3" style="max-width: 18rem;">
+        <div class="card-body text-dark">
+
+          <!-- QUESTION CONTAINER -->
+
+        <div class="question-container">
+          <div id="questionOne">
+            Which event occurs when the user clicks on an HTML element?
+          </div>
+          <div id="answer-buttons" class="button-grid">
+            <button class="choices">answer 1</button>
+            <button class="choices">answer 2</button>
+            <button class="choices">answer 3</button>
+            <button class="choices">answer 4</button>
+          </div>
+      <button id="submitButton" class="submitButton btn hide" onclick="check()">
+        Submit
+      </button>
+    </div>
+    </div>
+    </div>
+  
+
+        <!-- FIRST RADIO -->
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="choices"
+            id="x"
+            value="onchange"
+          />
+          <label class="form-check-label" for="choices">
+            onchange
+          </label>
+        </div>
+
+        <!-- SECOND RADIO -->
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="choices"
+            id="x"
+            value="option2"
+          />
+          <label class="form-check-label" for="exampleRadios2">
+            onmouseclick
+          </label>
+        </div>
+        <!-- THIRD RADIO -->
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="choices"
+            id="answerOne"
+            value="onclick"
+          />
+          <label class="form-check-label" for="answerOne">
+            onclick
+          </label>
+        </div>
+        <!-- FOURTH RADIO -->
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="choices"
+            id="x"
+            value="option1"
+          />
+          <label class="form-check-label" for="exampleRadios1">
+            onmouseover
+          </label>
+        </div>
       </div>
-      <!-- SECOND RADIO -->
-      <div class="form-check">
-        <input
-          class="form-check-input"
-          type="radio"
-          name="exampleRadios"
-          id="exampleRadios2"
-          value="option2"
-        />
-        <label class="form-check-label" for="exampleRadios2">
-          onmouseclick
-        </label>
-      </div>
-      <!-- THIRD RADIO -->
-      <div class="form-check">
-        <input
-          class="form-check-input"
-          type="radio"
-          name="exampleRadios"
-          id="exampleRadios1"
-          value="option1"
-        />
-        <label class="form-check-label" for="exampleRadios1">
-          onclick
-        </label>
-      </div>
+      
     </div>
 
     <script src="./assets/script.js"></script>
