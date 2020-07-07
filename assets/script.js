@@ -1,17 +1,18 @@
 let startQuiz = document.getElementById("start-button");
-let questionContainerEl = document.getElementById("question-container");
+let containerQuestionsEl = document.getElementById("container-questions");
 let questionEl = document.getElementById("question");
 let answerButtonEl = document.getElementById("answer-buttons");
 let submitButton = document.getElementById("submit-button");
 
 // WHEN CLICKED THIS STARTS THE QUIZ
 startQuiz.addEventListener("click", start);
+startQuiz.addEventListener("click", countDown);
 
 // THIS IS THE COUNTDOWN TIMER
-var timeLeft = 15;
+var timeLeft = 50;
 var timeEl = document.querySelector(".time");
 
-// HOW TO GET START BUTTON INTO FUNCTION - PARAMETERS?
+// START FUNCTION IN PARAMETERS, EVENTLISTENER OR DOM IN COUNTDOWN FUNCTION?
 
 function countDown() {
   var timerInterval = setInterval(function () {
@@ -29,13 +30,13 @@ function sendMessage() {
   timeEl.textContent = "Time's Up!";
 }
 
-countDown();
+// WHEN DO WE CALL THIS FUNCTION?
 
 // THIS IS THE FUNCTION THAT WILL START THE QUIZ
 function start() {
   console.log("Quiz Started");
   startQuiz.classList.add("hide");
-  questionContainerEl.classList.remove("hide");
+  containerQuestionsEl.classList.remove("hide");
   submitButton.classList.remove("hide");
   nextQuestion();
 }
