@@ -4,12 +4,12 @@ let questionEl = document.getElementById("question");
 let answerButtonEl = document.getElementById("answer-buttons");
 let submitButton = document.getElementById("submit-button");
 
-// WHEN CLICKED THIS STARTS THE QUIZ
+// WHEN CLICKED THIS STARTS THE QUIZ AND TIMER
 startQuiz.addEventListener("click", start);
 startQuiz.addEventListener("click", countDown);
 
 // THIS IS THE COUNTDOWN TIMER
-var timeLeft = 50;
+var timeLeft = 60;
 var timeEl = document.querySelector(".time");
 
 // START FUNCTION IN PARAMETERS, EVENTLISTENER OR DOM IN COUNTDOWN FUNCTION?
@@ -106,42 +106,42 @@ function check() {
 // let answerFive = "if (i==3)";
 
 // QUESTIONS
-// let questionTwo = [
-//   {
-//     question: "Inside which HTML tag do we put the JavaScript?",
-//     choices: ["<js>", "<javascript>", "scripting", "<script>"],
-//     correctAnswer: "<script>",
-//   },
-// ];
+let questionTwo = [
+  {
+    question: "Inside which HTML tag do we put the JavaScript?",
+    choices: ["<js>", "<javascript>", "scripting", "<script>"],
+    correctAnswer: "<script>",
+  },
+];
 
-// let questionThree = [
-//   {
-//     question: "How do you create a function in JavaScript?",
-//     choices: [
-//       "call aFunction()",
-//       "aFunction()",
-//       "call function aFunction",
-//       "var aFunction()",
-//     ],
-//     correctAnswer: "aFunction()",
-//   },
-// ];
+let questionThree = [
+  {
+    question: "How do you create a function in JavaScript?",
+    choices: [
+      "call aFunction()",
+      "aFunction()",
+      "call function aFunction",
+      "var aFunction()",
+    ],
+    correctAnswer: "aFunction()",
+  },
+];
 
-// let questionFour = [
-//   {
-//     question: "Which operator is used to assign a value to a variable?",
-//     choices: ["*", "=", "-", ":"],
-//     correctAnswer: "=",
-//   },
-// ];
+let questionFour = [
+  {
+    question: "Which operator is used to assign a value to a variable?",
+    choices: ["*", "=", "-", ":"],
+    correctAnswer: "=",
+  },
+];
 
-// let questionFive = [
-//   {
-//     question: "How to write an IF statement in JavaScript?",
-//     choices: ["if i == 3", "if i = 3", "if (i==3)", "if (i=3) then"],
-//     correctAnswer: "if (i==3)",
-//   },
-// ];
+let questionFive = [
+  {
+    question: "How to write an IF statement in JavaScript?",
+    choices: ["if i == 3", "if i = 3", "if (i==3)", "if (i=3) then"],
+    correctAnswer: "if (i==3)",
+  },
+];
 
 // }
 
