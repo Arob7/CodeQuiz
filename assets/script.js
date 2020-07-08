@@ -1,19 +1,17 @@
-let startQuiz = document.getElementById("start-button");
+let startButton = document.getElementById("start-button");
 let containerQuestionsEl = document.getElementById("container-questions");
 let questionEl = document.getElementById("question");
-let answerButtonEl = document.getElementById("answer-buttons");
+let answerButton = document.getElementById("answer-buttons");
 let submitButton = document.getElementById("submit-button");
 
 // WHEN CLICKED THIS STARTS THE QUIZ AND TIMER
-startQuiz.addEventListener("click", start);
-startQuiz.addEventListener("click", countDown);
+startButton.addEventListener("click", start);
+startButton.addEventListener("click", countDown);
 
-// THIS IS THE COUNTDOWN TIMER
 var timeLeft = 60;
 var timeEl = document.querySelector(".time");
 
-// START FUNCTION IN PARAMETERS, EVENTLISTENER OR DOM IN COUNTDOWN FUNCTION?
-
+// COUNTDOWN TIMER FUNCTION
 function countDown() {
   var timerInterval = setInterval(function () {
     timeLeft--;
@@ -25,25 +23,30 @@ function countDown() {
     }
   }, 1000);
 }
-
+//  MESSAGE WHEN TIME RUNS OUT
 function sendMessage() {
   timeEl.textContent = "Time's Up!";
 }
 
-// WHEN DO WE CALL THIS FUNCTION?
-
-// THIS IS THE FUNCTION THAT WILL START THE QUIZ
+// THIS FUNCTION PROMPTS QUESTIONS AFTER START BUTTON CLICKED
 function start() {
   console.log("Quiz Started");
-  startQuiz.classList.add("hide");
+  startButton.classList.add("hide");
   containerQuestionsEl.classList.remove("hide");
   submitButton.classList.remove("hide");
   nextQuestion();
 }
 
+// SUBMIT BUTTON GRABS NEXT QUESTION
+submitButton.addEventListener("click", submitAnswer);
+
+function submitAnswer() {
+  console.log("Submit Button clicked");
+}
+
 function nextQuestion() {}
 
-function showQuestion(questionS) {
+function showQuestion(questions) {
   questionEl.innerText = question.question;
   question.choices.forEach((choices) => {
     let button = document.createElement("button");
@@ -55,37 +58,94 @@ function showQuestion(questionS) {
   });
 }
 
-function submitAnswer() {}
+// THIS VALIDATES RADIO BUTTONS AND WORKS!!
+// function check() {
+//   if (document.getElementById("answerOne").checked) alert("Correct!");
+//   else alert("Wrong answer!");
+// }
 
+// QUESTIONS
 let questions = [
   {
     question: "Which event occurs when the user clicks on an HTML element?",
-    choices: ["onchange", "onmouseclick", "onclick", "onmouseover"],
+    choices: [
+      {
+        answer: "onchange",
+        correct: false,
+      },
+      {
+        answer: "onmouseclick",
+        correct: false,
+      },
+      {
+        answer: "onclick",
+        correct: true,
+      },
+      {
+        answer: "onmouseover",
+        correct: false,
+      },
+    ],
   },
 
   {
     question: "Inside which HTML tag do we put the JavaScript?",
-    choices: ["<js>", "<javascript>", "scripting", "<script>"],
+    choices: [
+      {
+        answer: "<js>",
+        correct: false,
+      },
+      {
+        answer: "<javascript>",
+        correct: false,
+      },
+      {
+        answer: "scripting",
+        correct: false,
+      },
+      {
+        answer: "<script>",
+        correct: true,
+      },
+    ],
   },
 
   {
     question: "How do you create a function in JavaScript?",
     choices: [
-      "call aFunction()",
-      "aFunction()",
-      "call function aFunction",
-      "var aFunction()",
+      {
+        answer: "call aFunction()",
+        correct: false,
+      },
+      { answer: "aFunction()", correct: true },
+
+      { answer: "call function aFunction", correct: false },
+
+      { answer: "var aFunction()", correct: false },
     ],
   },
 
   {
     question: "Which operator is used to assign a value to a variable?",
-    choices: ["*", "=", "-", ":"],
+    choices: [
+      { answer: "*", correct: false },
+      { answer: "=", correct: true },
+      { answer: "-", correct: false },
+      { answer: ":", correct: false },
+    ],
   },
 
   {
     question: "How to write an IF statement in JavaScript?",
-    choices: ["if i == 3", "if i = 3", "if (i==3)", "if (i=3) then"],
+    choices: [
+      {
+        answer: "if i == 3",
+        correct: false,
+      },
+      { answer: "if i = 3", correct: false },
+      { answer: "if (i==3)", correct: true },
+      { answer: "if (i=3) then", correct: false },
+    ],
   },
 ];
 
@@ -94,84 +154,12 @@ for (let i = 0; i < questions.length; i++) {
   console.log(questions[i].question);
 }
 
-// THIS VALIDATES RADIO BUTTONS AND WORKS!!
-function check() {
-  if (document.getElementById("answerOne").checked) alert("Correct!");
-  else alert("Wrong answer!");
-}
-
-// let answerTwo = "<script>";
-// let answerThree = "aFunction()";
-// let answerFour = "=";
-// let answerFive = "if (i==3)";
-
-// QUESTIONS
-let questionTwo = [
-  {
-    question: "Inside which HTML tag do we put the JavaScript?",
-    choices: ["<js>", "<javascript>", "scripting", "<script>"],
-    correctAnswer: "<script>",
-  },
-];
-
-let questionThree = [
-  {
-    question: "How do you create a function in JavaScript?",
-    choices: [
-      "call aFunction()",
-      "aFunction()",
-      "call function aFunction",
-      "var aFunction()",
-    ],
-    correctAnswer: "aFunction()",
-  },
-];
-
-let questionFour = [
-  {
-    question: "Which operator is used to assign a value to a variable?",
-    choices: ["*", "=", "-", ":"],
-    correctAnswer: "=",
-  },
-];
-
-let questionFive = [
-  {
-    question: "How to write an IF statement in JavaScript?",
-    choices: ["if i == 3", "if i = 3", "if (i==3)", "if (i=3) then"],
-    correctAnswer: "if (i==3)",
-  },
-];
-
-// }
-
 // PRACTICE AREA
 
 // THIS LOOPS THROUGH THE QUESTIONS
 // for (let i = 0; i < questions.length; i++) {
 //   console.log(questions[i].question);
 // }
-
-// for (let x of questions) {
-//   console.log(x.question);
-// }
-
-// questions.forEach(function (a) {
-//   console.log(a.question);
-// });
-// questions.forEach(function (b) {
-//   console.log(b.choices);
-// });
-
-// questions.forEach(function (c) {
-//   console.log(c.correctAnswer);
-// });
-
-// for (let y of choices) {
-//   console.log(y)
-// }
-
-//create counter to know which question you are on --THIS IS TIMER
 
 // var student = {
 //     firstName: "Ari",
