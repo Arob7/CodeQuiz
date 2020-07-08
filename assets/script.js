@@ -3,6 +3,7 @@ let containerQuestionsEl = document.getElementById("container-questions");
 let questionEl = document.getElementById("question");
 let answerButton = document.getElementById("answer-buttons");
 let submitButton = document.getElementById("submit-button");
+var score = 0;
 
 // WHEN CLICKED THIS STARTS THE QUIZ AND TIMER
 startButton.addEventListener("click", start);
@@ -34,7 +35,23 @@ function start() {
   startButton.classList.add("hide");
   containerQuestionsEl.classList.remove("hide");
   submitButton.classList.remove("hide");
-  nextQuestion();
+}
+
+// TRYING TO FIGURE OUT HOW TO MAKE QUESTIONS LOOP?
+function nextQuestion() {
+  for (let i = 0; i < questions.length; i++) {
+    questions[i].question;
+
+    questionEl.textContent = questions + "";
+  }
+  containerQuestionsEl.classList.remove("hide");
+
+  if (containerQuestionsEl.style.display === "none") {
+    containerQuestionsEl.style.display = "block";
+  } else {
+    containerQuestionsEl.style.display = "none";
+  }
+  submitButton.classList.remove("hide");
 }
 
 // SUBMIT BUTTON GRABS NEXT QUESTION
@@ -42,21 +59,21 @@ submitButton.addEventListener("click", submitAnswer);
 
 function submitAnswer() {
   console.log("Submit Button clicked");
+  nextQuestion();
+  containerQuestionsEl.classList.remove("hide");
 }
 
-function nextQuestion() {}
-
-function showQuestion(questions) {
-  questionEl.innerText = question.question;
-  question.choices.forEach((choices) => {
-    let button = document.createElement("button");
-    button.innerText = choices.text;
-    button.classList.add("choicebutton");
-    if (choices.correct) {
-      button.dataset.correct = choices.correct;
-    }
-  });
-}
+// function showQuestion() {
+//   questionEl.innerText = question.question;
+//   question.choices.forEach((choices) => {
+//     let button = document.createElement("button");
+//     button.innerText = choices.text;
+//     button.classList.add("choicebutton");
+//     if (choices.correct) {
+//       button.dataset.correct = choices.correct;
+//     }
+//   });
+// }
 
 // THIS VALIDATES RADIO BUTTONS AND WORKS!!
 // function check() {
@@ -149,34 +166,12 @@ let questions = [
   },
 ];
 
-// THIS LOOPS THROUGH THE QUESTIONS
-for (let i = 0; i < questions.length; i++) {
-  console.log(questions[i].question);
-}
-
-// PRACTICE AREA
-
-// THIS LOOPS THROUGH THE QUESTIONS
-// for (let i = 0; i < questions.length; i++) {
-//   console.log(questions[i].question);
-// }
-
-// var student = {
-//     firstName: "Ari",
-//     tutoring: true
-// }
-
-// var firstname = "Ari"
-// console.log(firstname)
-
 // console.log(student.firstName)
 // console.log(questions[3].question)
 // console.log(questions[3].choices[2])
 
 // THIS IS FOR SCORE COUNTER
 // var count = 0;
-// var incrementEl = document.querySelector("#increment");
-// var decrementEl = document.querySelector("#decrement");
 // var countEl = document.querySelector("#count");
 
 // function setCounterText() {

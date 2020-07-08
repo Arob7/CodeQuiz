@@ -19,45 +19,43 @@
       type="button"
       class="btn btn-primary"
       id="start-button"
-      onclick="start()">
+      onclick="start()"
+    >
       START QUIZ!
     </button>
 
     <!-- THIS AREA IS FOR SCORE COUNTER -->
-    <div>
+    <header>
       <h6>Current Score <span id="count">0</span></h6>
       <div class="container">
         <h3 class="time"></h3>
       </div>
-  
-    </div>
+    </header>
 
     <!-- CARD -->
     <div id="container-questions" class="hide">
       <div class="card border-dark mb-3" style="max-width: 18rem;">
         <div class="card-body text-dark">
-
           <!-- QUESTION CONTAINER -->
-          <div id="question-container">
-          <div id="question">
+          <!-- <div id="question-container"> -->
+          <h3 id="question">
             Which event occurs when the user clicks on an HTML element?
-          </div>
+          </h3>
           <div id="answer-buttons" class="button-grid">
             <button class="choices" id>answer 1</button>
             <button class="choices">answer 2</button>
             <button class="choices">answer 3</button>
             <button class="choices">answer 4</button>
           </div>
-      <button id="submit-button" class="hide" onclick="check()">
-        Submit
-      </button>
+          <button id="submit-button" class="hide" onclick="submitAnswer()">
+            Submit
+          </button>
+        </div>
+      </div>
     </div>
-    </div>
-    </div>
-  
 
-        <!-- FIRST RADIO -->
-        <!-- <div class="form-check">
+    <!-- FIRST RADIO -->
+    <!-- <div class="form-check">
           <input
             class="form-check-input"
             type="radio"
@@ -70,8 +68,8 @@
           </label>
         </div> -->
 
-        <!-- SECOND RADIO -->
-        <!-- <div class="form-check">
+    <!-- SECOND RADIO -->
+    <!-- <div class="form-check">
           <input
             class="form-check-input"
             type="radio"
@@ -83,8 +81,8 @@
             onmouseclick
           </label>
         </div> -->
-        <!-- THIRD RADIO -->
-        <!-- <div class="form-check">
+    <!-- THIRD RADIO -->
+    <!-- <div class="form-check">
           <input
             class="form-check-input"
             type="radio"
@@ -96,8 +94,8 @@
             onclick
           </label>
         </div> -->
-        <!-- FOURTH RADIO -->
-        <!-- <div class="form-check">
+    <!-- FOURTH RADIO -->
+    <!-- <div class="form-check">
           <input
             class="form-check-input"
             type="radio"
