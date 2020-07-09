@@ -4,10 +4,11 @@ let questionEl = document.getElementById("question");
 let answerButton = document.getElementById("answer-buttons");
 let submitButton = document.getElementById("submit-button");
 var score = 0;
+let currentQuestion = 0;
 
 // WHEN CLICKED THIS STARTS THE QUIZ AND TIMER
 startButton.addEventListener("click", start);
-startButton.addEventListener("click", countDown);
+// startButton.addEventListener("click", countDown);
 
 var timeLeft = 60;
 var timeEl = document.querySelector(".time");
@@ -35,33 +36,44 @@ function start() {
   startButton.classList.add("hide");
   containerQuestionsEl.classList.remove("hide");
   submitButton.classList.remove("hide");
+  countDown();
+  nextQuestion();
 }
+
+// for (let i = 0; i < questions.length; i++) {
+//   questions[i].question;
 
 // TRYING TO FIGURE OUT HOW TO MAKE QUESTIONS LOOP?
 function nextQuestion() {
-  for (let i = 0; i < questions.length; i++) {
-    questions[i].question;
+  if (currentQuestion < questions.length) {
+    questionEl.textContent = questions[currentQuestion].question;
+    console.log(questions[0].question);
+    answerButton.textContent = "";
+    let markup = "";
+    let dataSet = "";
+    questions[currentQuestion].choices.forEach(function (choice) {
+      console.log(`<button class="choices">${choice.answer}</button>`);
+      if (choice.correct) {
+        dataSet = "data-correct='correct'";
+      } else {
+        dataSet = "";
+      }
+      markup += `<button class="choices" ${dataSet}>${choice.answer}</button>`;
+    });
 
-    questionEl.textContent = questions + "";
+    answerButton.innerHTML = markup;
+    currentQuestion++;
   }
-  containerQuestionsEl.classList.remove("hide");
-
-  if (containerQuestionsEl.style.display === "none") {
-    containerQuestionsEl.style.display = "block";
-  } else {
-    containerQuestionsEl.style.display = "none";
-  }
-  submitButton.classList.remove("hide");
 }
 
 // SUBMIT BUTTON GRABS NEXT QUESTION
-submitButton.addEventListener("click", submitAnswer);
+// submitButton.addEventListener("click", submitAnswer);
 
-function submitAnswer() {
-  console.log("Submit Button clicked");
-  nextQuestion();
-  containerQuestionsEl.classList.remove("hide");
-}
+// function submitAnswer() {
+//   console.log("Submit Button clicked");
+//   nextQuestion();
+//   containerQuestionsEl.classList.remove("hide");
+// }
 
 // function showQuestion() {
 //   questionEl.innerText = question.question;
@@ -73,12 +85,6 @@ function submitAnswer() {
 //       button.dataset.correct = choices.correct;
 //     }
 //   });
-// }
-
-// THIS VALIDATES RADIO BUTTONS AND WORKS!!
-// function check() {
-//   if (document.getElementById("answerOne").checked) alert("Correct!");
-//   else alert("Wrong answer!");
 // }
 
 // QUESTIONS
@@ -109,11 +115,11 @@ let questions = [
     question: "Inside which HTML tag do we put the JavaScript?",
     choices: [
       {
-        answer: "<js>",
+        answer: "js",
         correct: false,
       },
       {
-        answer: "<javascript>",
+        answer: "javascript",
         correct: false,
       },
       {
@@ -121,7 +127,7 @@ let questions = [
         correct: false,
       },
       {
-        answer: "<script>",
+        answer: "script",
         correct: true,
       },
     ],
@@ -188,4 +194,4 @@ let questions = [
 //     count--;
 //     setCounterText();
 //   }
-// });
+//
